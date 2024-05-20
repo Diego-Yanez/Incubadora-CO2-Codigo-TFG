@@ -44,7 +44,7 @@ void setup() {
   lcd.backlight();  // Encendemos la retroiluminación del LCD
 
   // Inicialización del sensor DHT11
-  dht.setDelay(500); // Establecemos un retraso entre lecturas de 0.5 segundos
+  dht.setDelay(100); // Establecemos un retraso entre lecturas de 0.5 segundos
 
   // Configuramos los pines de los relés como salida
   pinMode(relePin1, OUTPUT);
@@ -103,19 +103,19 @@ void loop() {
   // Leemos y actualizamos los valores de los botones
   if (digitalRead(button1Pin) == LOW) {
     desiredTemp = min(desiredTemp + 1, 38); // Incrementamos la temperatura deseada
-    delay(200); // Retardo para evitar rebotes
+    delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button2Pin) == LOW) {
     desiredTemp = max(desiredTemp - 1, 20); // Decrementamos la temperatura deseada
-    delay(200); // Retardo para evitar rebotes
+    delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button3Pin) == LOW) {
     desiredHumidity = min(desiredHumidity + 1, 95); // Incrementamos la humedad deseada
-    delay(200); // Retardo para evitar rebotes
+    delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button4Pin) == LOW) {
     desiredHumidity = max(desiredHumidity - 1, 50); // Decrementamos la humedad deseada
-    delay(200); // Retardo para evitar rebotes
+    delay(100); // Retardo para evitar rebotes
   }
 
   // Actualizamos el LCD con los valores actuales y deseados
@@ -139,5 +139,5 @@ void updateLCD(int co2, int temperature, int humidity) {
   lcd.print("%"); // Mostramos las unidades de humedad deseada
   
   // Esperar un breve período antes de actualizar la pantalla nuevamente
-  delay(1000);
+  delay(100);
 }
