@@ -102,19 +102,19 @@ void loop() {
 
   // Leemos y actualizamos los valores de los botones
   if (digitalRead(button1Pin) == LOW) {
-    desiredTemp = min(desiredTemp + 1, 39); // Incrementamos la temperatura deseada
+    desiredTemp = min(desiredTemp + 1, 39); // Incrementamos la temperatura deseada y establecemos que la máxima a la que se puede llegar es 39
     delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button2Pin) == LOW) {
-    desiredTemp = max(desiredTemp - 1, 25); // Decrementamos la temperatura deseada
+    desiredTemp = max(desiredTemp - 1, 25); // Decrementamos la temperatura deseada y establecemos que la mínima a la que se puede llegar es 25
     delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button3Pin) == LOW) {
-    desiredHumidity = min(desiredHumidity + 1, 95); // Incrementamos la humedad deseada
+    desiredHumidity = min(desiredHumidity + 1, 95); // Incrementamos la humedad deseada y establecemos que la máxima a la que se puede llegar es 95%
     delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button4Pin) == LOW) {
-    desiredHumidity = max(desiredHumidity - 1, 90); // Decrementamos la humedad deseada
+    desiredHumidity = max(desiredHumidity - 1, 90); // Decrementamos la humedad deseada y establecemos que la mínima a la que se puede llegar es 90%
     delay(100); // Retardo para evitar rebotes
   }
 
