@@ -33,7 +33,7 @@ MQ135 mq135(MQ135_PIN);
 
 // Valores deseados iniciales
 int desiredTemp = 34;
-int desiredHumidity = 70;
+int desiredHumidity = 90;
 
 void setup() {
   // Inicialización de la comunicación serial
@@ -102,11 +102,11 @@ void loop() {
 
   // Leemos y actualizamos los valores de los botones
   if (digitalRead(button1Pin) == LOW) {
-    desiredTemp = min(desiredTemp + 1, 38); // Incrementamos la temperatura deseada
+    desiredTemp = min(desiredTemp + 1, 39); // Incrementamos la temperatura deseada
     delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button2Pin) == LOW) {
-    desiredTemp = max(desiredTemp - 1, 20); // Decrementamos la temperatura deseada
+    desiredTemp = max(desiredTemp - 1, 25); // Decrementamos la temperatura deseada
     delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button3Pin) == LOW) {
@@ -114,7 +114,7 @@ void loop() {
     delay(100); // Retardo para evitar rebotes
   }
   if (digitalRead(button4Pin) == LOW) {
-    desiredHumidity = max(desiredHumidity - 1, 50); // Decrementamos la humedad deseada
+    desiredHumidity = max(desiredHumidity - 1, 90); // Decrementamos la humedad deseada
     delay(100); // Retardo para evitar rebotes
   }
 
