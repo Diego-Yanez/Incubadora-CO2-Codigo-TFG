@@ -130,6 +130,8 @@ void updateLCD(int co2, int temperature, int humidity) {
   lcd.print("PPM "); // Mostramos las unidades de CO2
   lcd.print(temperature); // Mostramos el valor de temperatura
   lcd.print("C "); // Mostramos las unidades de temperatura
+  lcd.print(humidity); // Mostramos el valor de humedad
+  lcd.print("%"); // Mostramos las unidades de humedad
   lcd.setCursor(0, 1); // Establecemos el cursor en la segunda línea
   lcd.print("T_D:"); // Mostramos la etiqueta de temperatura deseada
   lcd.print(desiredTemp); // Mostramos la temperatura deseada
